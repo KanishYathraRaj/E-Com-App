@@ -1,5 +1,11 @@
 from rest_framework import serializers
 from .models import ProductCategory, Product, Wishlist, Cart, CartItem, Order, OrderItem, Address, Payment, TrackingDetails
+from django.contrib.auth.models import User
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['id', 'username', 'email', 'first_name', 'last_name','password']
 
 class ProductCategorySerializer(serializers.ModelSerializer):
     class Meta:

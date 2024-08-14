@@ -1,22 +1,15 @@
 from rest_framework import viewsets
 from .models import ProductCategory, Product, Wishlist, Cart, CartItem, Order, OrderItem, Address, Payment, TrackingDetails
-from .serializers import ProductCategorySerializer, ProductSerializer, WishlistSerializer, CartSerializer, CartItemSerializer, OrderSerializer, OrderItemSerializer, AddressSerializer, PaymentSerializer, TrackingDetailsSerializer
-
+from .serializers import ProductCategorySerializer, ProductSerializer, WishlistSerializer, CartSerializer, CartItemSerializer, OrderSerializer, OrderItemSerializer, AddressSerializer, PaymentSerializer, TrackingDetailsSerializer , UserSerializer
 from django.contrib.auth.models import User
-from rest_framework import serializers
 
-# Define a serializer for the User model
-class UserSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = User
-        fields = ['id', 'username', 'email', 'first_name', 'last_name']
+from rest_framework import serializers
 
 # Define a viewset for the User model
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
-    # Optionally disable authentication and permissions for this viewset
     authentication_classes = []
     permission_classes = []
 
@@ -29,9 +22,6 @@ class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
 
-    # authentication_classes = []
-    # permission_classes = []
-
 class WishlistViewSet(viewsets.ModelViewSet):
     queryset = Wishlist.objects.all()
     serializer_class = WishlistSerializer
@@ -43,6 +33,10 @@ class CartViewSet(viewsets.ModelViewSet):
 class CartItemViewSet(viewsets.ModelViewSet):
     queryset = CartItem.objects.all()
     serializer_class = CartItemSerializer
+
+    def destroy(self, request, *args, **kwargs):
+        # Handle custom delete logic if needed
+        return super().destroy(request, *args, **kwargs)
 
 class OrderViewSet(viewsets.ModelViewSet):
     queryset = Order.objects.all()
