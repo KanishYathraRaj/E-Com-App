@@ -11,7 +11,8 @@
 body {
     height: 100vh;
     width: 100%;
-    background: url("images/hero-bg.jpg") center/cover no-repeat;
+    background: url("images/hero-bg.jpg") center/cover;
+    background-attachment: fixed;
 }
 
 header {
@@ -355,3 +356,84 @@ form button:hover {
         padding: 30px 20px;
     }
 }
+
+.profile-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  .user-info {
+    display: flex;
+    align-items: center;
+  }
+  .logout-btn {
+    margin-left: 10px;
+    padding: 2px 4px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 11px;
+  }
+  .logout-btn:hover {
+    background-color: #d32f2f;
+  }
+  
+
+
+
+  /* Ensure the body and html cover the full viewport */
+html, body {
+    margin: 0;
+    height: 100%;
+  }
+  
+  /* Flexbox layout for main content and footer */
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Main content should expand to fill the available space */
+  main {
+    flex: 1;
+  }
+  
+  /* Ensure footer is at the bottom */
+  .footer {
+    margin-top: auto;
+  }
+
+
+
+
+
+  
+
+  /* Ensures the footer is at the bottom */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  main {
+    flex: 1;
+  }
+  
+  .product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  html , body{
+    height: 100%;
+  }
+  
+  
+  

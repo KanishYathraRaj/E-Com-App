@@ -1,0 +1,31 @@
+{
+  "users": [
+    {
+      "id": "1a7f",
+      "name": "Kanish Yathra Raj",
+      "email": "Kanish@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "c823",
+      "name": "Chris",
+      "email": "Chris@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "d2d0",
+      "name": "Priya",
+      "email": "Priya@gmail.com",
+      "password": "Priya123"
+    },
+    {
+      "id": "2b19",
+      "name": "X",
+      "email": "X",
+      "password": "X"
+    }
+  ],
+  "products": [],
+  "cart": [],
+  "orders": []
+}
